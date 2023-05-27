@@ -8,12 +8,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var KuradetaLabel: UILabel!
+    @IBOutlet var ClubsDataLabel: UILabel!
+    @IBOutlet var inLabel: UILabel!
+    @IBOutlet var OneLabel: UILabel!
+    @IBOutlet var EnterDataButton: UIButton!
+    @IBOutlet var GraphButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        EnterDataButton.layer.cornerRadius = 10
+        
     }
-
 
 }
 
