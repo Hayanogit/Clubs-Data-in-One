@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet var KuradetaLabel: UILabel!
     @IBOutlet var ClubsDataLabel: UILabel!
@@ -19,7 +19,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EnterDataButton.layer.cornerRadius = 10
+        EnterDataButton.layer.cornerRadius = 30
+        GraphButton.layer.cornerRadius = 30
+        
+    }
+    
+    @IBAction func tappedEnterDataButton(){
+        
+    }
+    @IBAction func tappedGraphButton(){
         
     }
 
