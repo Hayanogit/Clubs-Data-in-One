@@ -217,7 +217,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="DateTextField" destination="X6l-Ex-MSG" id="Jsd-XN-l7x"/>
+                        <outlet property="DateTextField" destination="X6l-Ex-MSG" id="TX2-Da-VMV"/>
                         <outlet property="EventTextField" destination="L7l-cm-QAz" id="ZRE-fI-z2E"/>
                         <outlet property="TimeTextField" destination="YmE-r1-bYl" id="dbr-dJ-gnu"/>
                     </connections>
@@ -279,7 +279,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rmh-VR-bgw"/>
+        <segue reference="Nhg-0d-dHL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="a8825bd6161892a5c9d94a04b16d99c5" width="474" height="841"/>

@@ -10,10 +10,10 @@ import RealmSwift
 
 class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate{
     
-    @IBOutlet var DateTextField: UITextField!
+    @IBOutlet weak var DateTextField: UITextField!
     @IBOutlet var EventTextField: UITextField!
     @IBOutlet var TimeTextField: UITextField!
-    let DatecalendarView = UICalendarView()
+    let datePicker = UIDatePicker()
     var EventpickerView: UIPickerView = UIPickerView()
     var event: [String] = ["100m","400m","1500m"]
     
@@ -29,15 +29,7 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         EventpickerView.delegate = self
         EventpickerView.dataSource = self
         
-        DatecalendarView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(DatecalendarView)
-        NSLayoutConstraint.activate([
-            self.view.topAnchor.constraint(equalTo: DatecalendarView.topAnchor),
-            self.view.leftAnchor.constraint(equalTo: DatecalendarView.leftAnchor),
-            self.view.rightAnchor.constraint(equalTo: DatecalendarView.rightAnchor)
-        ])
-        
-        DateTextField.inputView = DatecalendarView
+        createDatePicker()
         EventTextField.inputView = EventpickerView
         
         let data: Data? = read()
@@ -46,6 +38,28 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         EventTextField.text = data?.Event
         TimeTextField.text = data?.Time
         
+    }
+    
+    func createDatePicker(){
+        datePicker.datePickerMode = .date
+        datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
+        DateTextField.inputView = datePicker
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
+        toolbar.setItems([doneButton], animated: true)
+        DateTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneClicked(){
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale?
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        DateTextField.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
