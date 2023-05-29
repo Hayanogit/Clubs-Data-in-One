@@ -8,11 +8,15 @@
 import UIKit
 import RealmSwift
 
-class EnterDataViewController: UIViewController, UITextFieldDelegate{
+class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate{
     
     @IBOutlet var DateTextField: UITextField!
     @IBOutlet var EventTextField: UITextField!
     @IBOutlet var TimeTextField: UITextField!
+    let DatecalendarView = UICalendarView()
+    var EventpickerView: UIPickerView = UIPickerView()
+    var event: [String] = ["100m","400m","1500m"]
+    
     
     let realm = try! Realm()
     
@@ -22,6 +26,19 @@ class EnterDataViewController: UIViewController, UITextFieldDelegate{
         DateTextField.delegate = self
         EventTextField.delegate = self
         TimeTextField.delegate = self
+        EventpickerView.delegate = self
+        EventpickerView.dataSource = self
+        
+        DatecalendarView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(DatecalendarView)
+        NSLayoutConstraint.activate([
+            self.view.topAnchor.constraint(equalTo: DatecalendarView.topAnchor),
+            self.view.leftAnchor.constraint(equalTo: DatecalendarView.leftAnchor),
+            self.view.rightAnchor.constraint(equalTo: DatecalendarView.rightAnchor)
+        ])
+        
+        DateTextField.inputView = DatecalendarView
+        EventTextField.inputView = EventpickerView
         
         let data: Data? = read()
         
@@ -29,6 +46,22 @@ class EnterDataViewController: UIViewController, UITextFieldDelegate{
         EventTextField.text = data?.Event
         TimeTextField.text = data?.Time
         
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return event.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return event[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.EventTextField.text = event[row]
     }
     
     func read() -> Data?{

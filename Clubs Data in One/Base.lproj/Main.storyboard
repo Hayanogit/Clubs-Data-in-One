@@ -104,7 +104,7 @@
         <!--グラフ-->
         <scene sceneID="vn9-gk-J5u">
             <objects>
-                <viewController id="9P6-5Y-2Gq" sceneMemberID="viewController">
+                <viewController id="9P6-5Y-2Gq" customClass="GraphViewController" customModule="Clubs_Data_in_One" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DEg-nN-CYK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,8 +217,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="DateTextField" destination="X6l-Ex-MSG" id="RMo-wG-591"/>
-                        <outlet property="EventTextField" destination="L7l-cm-QAz" id="4Pd-bC-0sN"/>
+                        <outlet property="DateTextField" destination="X6l-Ex-MSG" id="Jsd-XN-l7x"/>
+                        <outlet property="EventTextField" destination="L7l-cm-QAz" id="ZRE-fI-z2E"/>
                         <outlet property="TimeTextField" destination="YmE-r1-bYl" id="dbr-dJ-gnu"/>
                     </connections>
                 </viewController>
