@@ -43,11 +43,13 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
     func createDatePicker(){
         datePicker.datePickerMode = .date
         datePicker.locale = NSLocale(localeIdentifier: "ja_JP") as Locale
+        datePicker.preferredDatePickerStyle = .wheels
         DateTextField.inputView = datePicker
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
-        toolbar.setItems([doneButton], animated: true)
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        toolbar.setItems([space,doneButton], animated: true)
         DateTextField.inputAccessoryView = toolbar
     }
     
