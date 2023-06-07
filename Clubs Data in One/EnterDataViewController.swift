@@ -36,7 +36,14 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         
         DateTextField.text = data?.Date
         EventTextField.text = data?.Event
-        TimeTextField.text = data?.Time
+        TimeTextField.text = "\(String(describing: data?.Time))"
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        toolbar.setItems([space,doneButton], animated: true)
+        EventTextField.inputAccessoryView = toolbar
+        TimeTextField.inputAccessoryView = toolbar
         
     }
     
@@ -94,13 +101,13 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
             try! realm.write{
                 data!.Date = Date
                 data!.Event = Event
-                data!.Time = Time
+                data!.Time = Double(Time)!
             }
         }else{
             let newData = Data()
             newData.Date = Date
             newData.Event = Event
-            newData.Time = Time
+            newData.Time = Double(Time)!
             try! realm.write{
                 realm.add(newData)
             }
@@ -118,6 +125,10 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
             textField.resignFirstResponder()
         }
         
+    }
+    
+    @IBAction func returnButton(){
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

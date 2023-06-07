@@ -11,13 +11,13 @@
 		89816B652A1DF4B00070F25E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89816B642A1DF4B00070F25E /* SceneDelegate.swift */; };
 		89816B672A1DF4B00070F25E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89816B662A1DF4B00070F25E /* ViewController.swift */; };
 		89816B6A2A1DF4B00070F25E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89816B682A1DF4B00070F25E /* Main.storyboard */; };
-		89816B6C2A1DF4B10070F25E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89816B6B2A1DF4B10070F25E /* Assets.xcassets */; };
 		89816B6F2A1DF4B10070F25E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89816B6D2A1DF4B10070F25E /* LaunchScreen.storyboard */; };
 		89816B9E2A23D23C0070F25E /* EnterDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89816B9D2A23D23C0070F25E /* EnterDataViewController.swift */; };
 		89816BA02A23D26F0070F25E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89816B9F2A23D26F0070F25E /* Data.swift */; };
 		89816BA32A23D4200070F25E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 89816BA22A23D4200070F25E /* Realm */; };
 		89816BA52A23D4200070F25E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89816BA42A23D4200070F25E /* RealmSwift */; };
 		89816BA72A24B6A30070F25E /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89816BA62A24B6A30070F25E /* GraphViewController.swift */; };
+		898620C82A30E76800372BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89816B6B2A1DF4B10070F25E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89816B6F2A1DF4B10070F25E /* LaunchScreen.storyboard in Resources */,
-				89816B6C2A1DF4B10070F25E /* Assets.xcassets in Resources */,
+				898620C82A30E76800372BE7 /* Assets.xcassets in Resources */,
 				89816B6A2A1DF4B00070F25E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

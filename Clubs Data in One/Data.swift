@@ -11,5 +11,5 @@ import RealmSwift
 class Data: Object{
     @objc dynamic var Date: String = ""
     @objc dynamic var Event: String = ""
-    @objc dynamic var Time: String = ""
+    @objc dynamic var Time: Double = 0.0
 }

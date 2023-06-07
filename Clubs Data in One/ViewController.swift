@@ -19,8 +19,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        EnterDataButton.layer.cornerRadius = 30
-        GraphButton.layer.cornerRadius = 30
+        EnterDataButton.layer.cornerRadius = 10
+        GraphButton.layer.cornerRadius = 10
+        EnterDataButton.clipsToBounds = true
+        GraphButton.clipsToBounds = true
         
     }
     
