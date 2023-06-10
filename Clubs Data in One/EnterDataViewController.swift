@@ -34,9 +34,13 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         
         let data: Data? = read()
         
-        DateTextField.text = data?.Date
+        /*DateTextField.text = data?.Date
         EventTextField.text = data?.Event
-        TimeTextField.text = "\(String(describing: data?.Time))"
+        if(data?.Time==nil){
+            TimeTextField.text = " "
+        }else{
+            TimeTextField.text = String(describing: data!.Time)
+        }*/
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
@@ -107,7 +111,7 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
             let newData = Data()
             newData.Date = Date
             newData.Event = Event
-            newData.Time = Double(Time)!
+            newData.Time = Double(Time) ?? 0
             try! realm.write{
                 realm.add(newData)
             }
