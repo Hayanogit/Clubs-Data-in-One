@@ -45,7 +45,7 @@
                                 <rect key="frame" x="20" y="708" width="390" height="140"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yz-T8-NJq">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="140"/>
                                         <color key="backgroundColor" red="1" green="0.62069515306122447" blue="0.043978528911564625" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="データ入力">
@@ -61,8 +61,8 @@
                                             <segue destination="2I8-IJ-gOl" kind="show" id="pyo-px-2Yr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXz-81-b85">
-                                        <rect key="frame" x="0.0" y="90" width="390" height="50"/>
+                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXz-81-b85">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="140"/>
                                         <color key="backgroundColor" red="1" green="0.62069515310000001" blue="0.043978528910000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="グラフ">
