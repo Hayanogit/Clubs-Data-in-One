@@ -39,6 +39,7 @@ class GraphViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDa
         toolbar.setItems([space,doneButton], animated: true)
         EventTextField.inputAccessoryView = toolbar
         
+        
         // Chart dataSet準備
         rawDataGraph.append(Data.Time)
                 let entries = rawDataGraph.enumerated().map { ChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
