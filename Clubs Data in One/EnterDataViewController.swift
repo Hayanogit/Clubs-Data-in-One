@@ -32,7 +32,7 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         createDatePicker()
         EventTextField.inputView = EventpickerView
         
-        let data: Data? = read()
+        let data: RealmData? = read()
         
         /*DateTextField.text = data?.Date
         EventTextField.text = data?.Event
@@ -91,8 +91,8 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         self.EventTextField.text = event[row]
     }
     
-    func read() -> Data?{
-        return realm.objects(Data.self).first
+    func read() -> RealmData?{
+        return realm.objects(RealmData.self).first
     }
     
     @IBAction func save(){
@@ -100,7 +100,7 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         let Event: String = EventTextField.text!
         let Time: String = TimeTextField.text!
         
-        let data: Data? = read()
+        let data: RealmData? = read()
         if data != nil{
             try! realm.write{
                 data!.Date = Date
@@ -108,7 +108,7 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
                 data!.Time = Double(Time)!
             }
         }else{
-            let newData = Data()
+            let newData = RealmData()
             newData.Date = Date
             newData.Event = Event
             newData.Time = Double(Time) ?? 0
