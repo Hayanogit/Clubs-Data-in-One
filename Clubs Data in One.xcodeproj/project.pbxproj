@@ -18,6 +18,8 @@
 		89816BA52A23D4200070F25E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89816BA42A23D4200070F25E /* RealmSwift */; };
 		89816BA72A24B6A30070F25E /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89816BA62A24B6A30070F25E /* GraphViewController.swift */; };
 		898620C82A30E76800372BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89816B6B2A1DF4B10070F25E /* Assets.xcassets */; };
+		89B0068A2A4319F80099A78D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 89B006892A4319F80099A78D /* DGCharts */; };
+		89B0068C2A4319F80099A78D /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 89B0068B2A4319F80099A78D /* DGChartsDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B0068C2A4319F80099A78D /* DGChartsDynamic in Frameworks */,
 				89816BA52A23D4200070F25E /* RealmSwift in Frameworks */,
+				89B0068A2A4319F80099A78D /* DGCharts in Frameworks */,
 				89816BA32A23D4200070F25E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +103,8 @@
 			packageProductDependencies = (
 				89816BA22A23D4200070F25E /* Realm */,
 				89816BA42A23D4200070F25E /* RealmSwift */,
+				89B006892A4319F80099A78D /* DGCharts */,
+				89B0068B2A4319F80099A78D /* DGChartsDynamic */,
 			);
 			productName = "Clubs Data in One";
 			productReference = 89816B5F2A1DF4B00070F25E /* Clubs Data in One.app */;
@@ -130,6 +136,7 @@
 			mainGroup = 89816B562A1DF4B00070F25E;
 			packageReferences = (
 				89816BA12A23D4200070F25E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				89B006882A4319F80099A78D /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 89816B602A1DF4B00070F25E /* Products */;
 			projectDirPath = "";
@@ -397,6 +404,14 @@
 				kind = branch;
 			};
 		};
+		89B006882A4319F80099A78D /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -409,6 +424,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 89816BA12A23D4200070F25E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		89B006892A4319F80099A78D /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89B006882A4319F80099A78D /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		89B0068B2A4319F80099A78D /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89B006882A4319F80099A78D /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
