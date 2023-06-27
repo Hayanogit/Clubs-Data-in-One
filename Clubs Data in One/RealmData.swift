@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class RealmData: Object{
-    @objc dynamic var Date: String = ""
-    @objc dynamic var Event: String = ""
-    @objc dynamic var Time: Double = 0.0
+    @objc dynamic var date: String = ""
+    @objc dynamic var event: String = ""
+    @objc dynamic var time: Double = 0.0
 }

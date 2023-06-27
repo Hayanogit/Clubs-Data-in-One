@@ -103,15 +103,15 @@ class EnterDataViewController: UIViewController, UIPickerViewDelegate,UIPickerVi
         let data: RealmData? = read()
         if data != nil{
             try! realm.write{
-                data!.Date = Date
-                data!.Event = Event
-                data!.Time = Double(Time)!
+                data!.date = Date
+                data!.event = Event
+                data!.time = Double(Time)!
             }
         }else{
             let newData = RealmData()
-            newData.Date = Date
-            newData.Event = Event
-            newData.Time = Double(Time) ?? 0
+            newData.date = Date
+            newData.event = Event
+            newData.time = Double(Time) ?? 0
             try! realm.write{
                 realm.add(newData)
             }

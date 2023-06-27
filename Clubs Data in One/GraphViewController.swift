@@ -29,9 +29,9 @@ class GraphViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDa
         EventpickerView.dataSource = self
         EventTextField.inputView = EventpickerView
         
-        let data: Data? = read()
+        let data: RealmData? = read()
         
-        EventTextField.text = data?.Event
+        EventTextField.text = RealmData?.event
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneClicked))
@@ -41,7 +41,7 @@ class GraphViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDa
         
         
         // Chart dataSet準備
-        rawDataGraph.append(Data.Time)
+        rawDataGraph.append(RealmData?.time)
                 let entries = rawDataGraph.enumerated().map { ChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
                 let dataSet = LineChartDataSet(entries: entries)
                 // 線の太さ
@@ -130,8 +130,8 @@ class GraphViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDa
         self.EventTextField.text = event[row]
     }
     
-    func read() -> Data?{
-        return realm.objects(Data.self).first
+    func read() -> [RealmData]{
+        return realm.objects(RealmData.self)
     }
     
     @IBAction func returnButton(){
